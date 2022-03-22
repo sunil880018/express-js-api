@@ -73,14 +73,14 @@ app.post('/upload-file', async(req, res) =>{
 });
 
 
-// ---> uploading image,pdf etc... and read the date and store but care about extension
+// ---> uploading image,pdf etc... and read the data and store but care about extension
 // before saving like below given in profile.pdf
 
 app.post('/upload-img',async(req,res)=>{
 
     let data = req.files.file.data // taking data in bytes (ascii)
 
-    fs.writeFile('profile.pdf', data, function (err) { // writing in a file ,that is image
+    fs.writeFile('profile.pdf', data, function (err) { // writing in a file ,that is pdf file,it can be image also
       if (err) return console.log(err);
     });
     res.send('success')
